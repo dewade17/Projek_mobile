@@ -1,12 +1,10 @@
 // import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:kosku/add_kos/kos_screen.dart';
-import 'package:kosku/mahasiswa/mahasiswa_page.dart';
-import 'package:kosku/screens/datas/datas_screen.dart';
 import 'package:kosku/screens/home_screen.dart';
 import 'package:kosku/screens/profile_screen.dart';
 import 'package:kosku/screens/promo_screen.dart';
+import 'package:kosku/screens/tentang_kami.dart';
 import 'package:kosku/utils/constants.dart';
 
 void main() {
@@ -24,10 +22,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Home Screen'),
-      routes: {
-        '/mahasiswa-screen': (context) => const MahasiswaScreen(),
-        '/datas-screen': (context) => const DatasScreen(),
-      }
     );
   }
 }
@@ -46,7 +40,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
-    const KosScreen(),
     const ProfileScreen(),
     const PromoScreen(),
   ];
@@ -123,24 +116,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.contact_emergency_outlined),
-                title: Text('Mahasiswa'),
+                leading: Icon(Icons.spatial_audio),
+                title: Text('Tentang Kami'),
                 onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => MahasiswaScreen()),
-                    );
-                  },
-              ),
-              ListTile(
-                leading: Icon(Icons.contact_emergency_outlined),
-                title: Text('Add_Kos'),
-                onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => KosScreen()),
-                    );
-                  },
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TentangKami()),
+                  );
+                },
               ),
               ListTile(
                 leading: Icon(Icons.contact_emergency_outlined),
