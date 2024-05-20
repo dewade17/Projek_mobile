@@ -4,6 +4,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:kosku/screens/home_screen.dart';
 import 'package:kosku/screens/profile_screen.dart';
 import 'package:kosku/screens/promo_screen.dart';
+import 'package:kosku/screens/setting_screen.dart';
 import 'package:kosku/screens/tentang_kami.dart';
 import 'package:kosku/utils/constants.dart';
 
@@ -40,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
+    const SettingScreen(),
     const ProfileScreen(),
     const PromoScreen(),
   ];
@@ -128,10 +130,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ListTile(
                 leading: Icon(Icons.contact_emergency_outlined),
-                title: Text('datas'),
+                title: Text('test-screen'),
                 onTap: () {
                   Navigator.pop(context);
-                  Navigator.pushNamed(context, '/datas-screen');
+                  Navigator.pushNamed(context, '/test-screen');
                 },
               ),
               ListTile(
